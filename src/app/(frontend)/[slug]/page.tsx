@@ -67,6 +67,12 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   const { hero, layout } = page
 
+  return <div className={`h-screen w-screen flex items-center  justify-center`}>
+    <p>
+Coming soon ...
+    </p>
+  </div>
+
   return (
     <article className="pt-16 pb-24">
       <PageClient />

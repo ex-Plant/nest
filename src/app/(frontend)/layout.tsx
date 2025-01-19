@@ -27,17 +27,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
       <body>
-        <Providers>
-          <AdminBar
-            adminBarProps={{
-              preview: isEnabled,
-            }}
-          />
+        {/*<Providers>*/}
+          {/*<AdminBar*/}
+          {/*  adminBarProps={{*/}
+          {/*    preview: isEnabled,*/}
+          {/*  }}*/}
+          {/*/>*/}
 
-          <Header />
+          {/*<Header />*/}
           {children}
-          <Footer />
-        </Providers>
+          {/*<Footer />*/}
+        {/*</Providers>*/}
       </body>
     </html>
   )
