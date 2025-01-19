@@ -42,7 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/*<Footer />*/}
         {/*</Providers>*/}
       </body>
-      <GoogleTagManager gtmId="G-RHDXSS9JQJ" />
+      <GoogleTagManager gtmId="GTM-5PBZ2X28" />
     </html>
   )
 }
