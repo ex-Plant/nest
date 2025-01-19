@@ -16,7 +16,7 @@ import { draftMode } from 'next/headers'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 
-import {  GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -42,7 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/*<Footer />*/}
         {/*</Providers>*/}
       </body>
-      <GoogleTagManager gtmId="GTM-5PBZ2X28" />
+      <GoogleAnalytics gaId="G-RHDXSS9JQJ" />
     </html>
   )
 }
