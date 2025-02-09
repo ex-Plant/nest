@@ -12,20 +12,17 @@ import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 
 import './globals.css'
-// import { getServerSideURL } from '@/utilities/getURL'
+import { getServerSideURL } from '@/utilities/getURL'
 
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
-import { AlientzGrotesque, AlientzSerif } from '../../../public/fonts/Alientz'
+import { AlientzGrotesque, AlientzSerif } from "../../../public/fonts/Alientz";
+
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
 
   return (
-    <html
-      className={cn(AlientzSerif.variable, AlientzGrotesque.variable)}
-      lang="en"
-      suppressHydrationWarning
-    >
+    <html className={cn( AlientzSerif.variable , AlientzGrotesque.variable)} lang="en" suppressHydrationWarning>
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
@@ -33,15 +30,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className={``}>
         {/*<Providers>*/}
-        {/*<AdminBar*/}
-        {/*  adminBarProps={{*/}
-        {/*    preview: isEnabled,*/}
-        {/*  }}*/}
-        {/*/>*/}
+          {/*<AdminBar*/}
+          {/*  adminBarProps={{*/}
+          {/*    preview: isEnabled,*/}
+          {/*  }}*/}
+          {/*/>*/}
 
-        {/*<Header />*/}
-        {children}
-        {/*<Footer />*/}
+          {/*<Header />*/}
+          {children}
+          {/*<Footer />*/}
         {/*</Providers>*/}
       </body>
       <GoogleAnalytics gaId="G-RHDXSS9JQJ" />
@@ -49,11 +46,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
 }
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL(getServerSideURL()),
-//   openGraph: mergeOpenGraph(),
-//   twitter: {
-//     card: 'summary_large_image',
-//     creator: '@payloadcms',
-//   },
-// }
+export const metadata: Metadata = {
+  metadataBase: new URL(getServerSideURL()),
+  openGraph: mergeOpenGraph(),
+  twitter: {
+    card: 'summary_large_image',
+    creator: '@payloadcms',
+  },
+}

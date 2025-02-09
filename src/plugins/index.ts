@@ -18,11 +18,11 @@ const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Payload Website Template` : 'Payload Website Template'
 }
 
-// const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
-// const url = getServerSideURL()
+const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
+  const url = getServerSideURL()
 
-// return doc?.slug ? `${url}/${doc.slug}` : url
-// }
+  return doc?.slug ? `${url}/${doc.slug}` : url
+}
 
 export const plugins: Plugin[] = [
   redirectsPlugin({
@@ -53,7 +53,7 @@ export const plugins: Plugin[] = [
   }),
   seoPlugin({
     generateTitle,
-    // generateURL,
+    generateURL,
   }),
   formBuilderPlugin({
     fields: {
