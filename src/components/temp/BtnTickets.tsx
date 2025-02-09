@@ -9,7 +9,7 @@ export default function BtnTickets() {
       target={`_blank`}
       rel={`noreferrer`}
     >
-      <button className={'bg-lightGreen px-8 py-4 text-[1.25rem]'}>{buyTicket}</button>
+      <button className={'bg-lightGreen px-8 py-4 text-[1.25rem] uppercase'}>{buyTicket}</button>
     </a>
   )
 }

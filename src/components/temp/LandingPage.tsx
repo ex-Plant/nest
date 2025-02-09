@@ -11,7 +11,7 @@ export default function LandingPage() {
   return (
     <LandingGradientWrapper>
       <section
-        className={`flex flex-col items-center w-full grow justify-center max-w-[1440px] mx-auto `}
+        className={`flex flex-col items-center w-full grow justify-center max-w-[1440px] mx-auto font-alientzSerif `}
       >
         <TopDesktop />
         <div className={`pb-7 pt-[min(7.5rem,15vh)] md:hidden`}>
@@ -30,12 +30,12 @@ export default function LandingPage() {
 
 function TopDesktop() {
   return (
-    <div className={` hidden md:flex items-center justify-center  pb-24 gap-x-10 text-3xl `}>
-      <p className={``}>Krzykawka</p>
+    <div className={` hidden md:flex items-center justify-center  pb-24 gap-x-10 text-3xl  `}>
+      <p>Krzykawka</p>
       <div className={``}>
         <BirdLogo />
       </div>
-      <p className={``}>{date}</p>
+      <p>{date}</p>
     </div>
   )
 }
