@@ -11,6 +11,7 @@ export const getServerSideURL = () => {
     url = 'http://localhost:3000'
   }
 
+  console.log(`getServerSideURL`, url)
   return url
 }
 
@@ -26,6 +27,6 @@ export const getClientSideURL = () => {
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   }
-
+  console.log(`getClientSideURL`, process.env.NEXT_PUBLIC_SERVER_URL)
   return process.env.NEXT_PUBLIC_SERVER_URL || ''
 }
