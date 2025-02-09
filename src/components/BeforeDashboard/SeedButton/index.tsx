@@ -9,7 +9,7 @@ const SuccessMessage: React.FC = () => (
   <div>
     Database seeded! You can now{' '}
     <a target="_blank" href="/">
-      visit your website
+      visit your website!
     </a>
   </div>
 )
