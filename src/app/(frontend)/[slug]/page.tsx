@@ -14,6 +14,7 @@ import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import LandingPage from '@/components/temp/LandingPage'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -48,7 +49,8 @@ type Args = {
 export default async function Page({ params: paramsPromise }: Args) {
   const { isEnabled: draft } = await draftMode()
   const { slug = 'home' } = await paramsPromise
-  const url = '/' + slug
+  const url = '/' +
+    slug
 
   let page: PageType | null
 
@@ -57,7 +59,9 @@ export default async function Page({ params: paramsPromise }: Args) {
   })
 
   // Remove this code once your website is seeded
-  if (!page && slug === 'home') {
+  if (!page &&
+    slug ===
+    'home') {
     page = homeStatic
   }
 
@@ -67,19 +71,21 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   const { hero, layout } = page
 
-  return <div className={`h-screen w-screen flex items-center  justify-center`}>
-    <p>
-Coming soon ...
-    </p>
-  </div>
+
+
+  return <LandingPage/>
+
+
 
   return (
     <article className="pt-16 pb-24">
       <PageClient />
       {/* Allows redirects for valid pages too */}
-      <PayloadRedirects disableNotFound url={url} />
+      <PayloadRedirects disableNotFound
+                        url={url} />
 
-      {draft && <LivePreviewListener />}
+      {draft &&
+        <LivePreviewListener />}
 
       <RenderHero {...hero} />
       <RenderBlocks blocks={layout} />
@@ -114,5 +120,6 @@ const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {
     },
   })
 
-  return result.docs?.[0] || null
+  return result.docs?.[0] ||
+    null
 })

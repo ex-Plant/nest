@@ -53,6 +53,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        'lightGreen': '#16DD00',
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
@@ -93,6 +94,8 @@ export default {
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-geist-sans)'],
+        alientz: ['var(--font-alientz)'],
+        alientzSerif: ['var(--font-alientz-serif)'],
       },
       keyframes: {
         'accordion-down': {
