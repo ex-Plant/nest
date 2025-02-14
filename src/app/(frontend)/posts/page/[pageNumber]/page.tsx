@@ -18,20 +18,20 @@ type Args = {
 }
 
 export default async function Page({ params: paramsPromise }: Args) {
-  const { pageNumber } = await paramsPromise
-  const payload = await getPayload({ config: configPromise })
-
-  const sanitizedPageNumber = Number(pageNumber)
-
-  if (!Number.isInteger(sanitizedPageNumber)) notFound()
-
-  const posts = await payload.find({
-    collection: 'posts',
-    depth: 1,
-    limit: 12,
-    page: sanitizedPageNumber,
-    overrideAccess: false,
-  })
+  // const { pageNumber } = await paramsPromise
+  // const payload = await getPayload({ config: configPromise })
+  //
+  // const sanitizedPageNumber = Number(pageNumber)
+  //
+  // if (!Number.isInteger(sanitizedPageNumber)) notFound()
+  //
+  // const posts = await payload.find({
+  //   collection: 'posts',
+  //   depth: 1,
+  //   limit: 12,
+  //   page: sanitizedPageNumber,
+  //   overrideAccess: false,
+  // })
 
   return (
     <div className="pt-24 pb-24">
@@ -43,46 +43,46 @@ export default async function Page({ params: paramsPromise }: Args) {
       </div>
 
       <div className="container mb-8">
-        <PageRange
-          collection="posts"
-          currentPage={posts.page}
-          limit={12}
-          totalDocs={posts.totalDocs}
-        />
+        {/*<PageRange*/}
+        {/*  collection="posts"*/}
+        {/*  currentPage={posts.page}*/}
+        {/*  limit={12}*/}
+        {/*  totalDocs={posts.totalDocs}*/}
+        {/*/>*/}
       </div>
 
-      <CollectionArchive posts={posts.docs} />
+      {/*<CollectionArchive posts={posts.docs} />*/}
 
-      <div className="container">
-        {posts?.page && posts?.totalPages > 1 && (
-          <Pagination page={posts.page} totalPages={posts.totalPages} />
-        )}
-      </div>
+      {/*<div className="container">*/}
+      {/*  {posts?.page && posts?.totalPages > 1 && (*/}
+      {/*    <Pagination page={posts.page} totalPages={posts.totalPages} />*/}
+      {/*  )}*/}
+      {/*</div>*/}
     </div>
   )
 }
 
-export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-  const { pageNumber } = await paramsPromise
-  return {
-    title: `Payload Website Template Posts Page ${pageNumber || ''}`,
-  }
-}
+// export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+//   const { pageNumber } = await paramsPromise
+//   return {
+//     title: `Payload Website Template Posts Page ${pageNumber || ''}`,
+//   }
+// }
 
-export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
-  const { totalDocs } = await payload.count({
-    collection: 'posts',
-    overrideAccess: false,
-  })
-
-  const totalPages = Math.ceil(totalDocs / 10)
-
-  const pages: { pageNumber: string }[] = []
-
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push({ pageNumber: String(i) })
-  }
-
-  return pages
-}
+// export async function generateStaticParams() {
+//   const payload = await getPayload({ config: configPromise })
+//   const { totalDocs } = await payload.count({
+//     collection: 'posts',
+//     overrideAccess: false,
+//   })
+//
+//   const totalPages = Math.ceil(totalDocs / 10)
+//
+//   const pages: { pageNumber: string }[] = []
+//
+//   for (let i = 1; i <= totalPages; i++) {
+//     pages.push({ pageNumber: String(i) })
+//   }
+//
+//   return pages
+// }

@@ -24,13 +24,13 @@ export const MediaBlock: React.FC<Props> = (props) => {
     className,
     enableGutter = true,
     imgClassName,
-    media,
+    // media,
     staticImage,
     disableInnerContainer,
   } = props
 
   let caption
-  if (media && typeof media === 'object') caption = media.caption
+  // if (media && typeof media === 'object') caption = media.caption
 
   return (
     <div
@@ -42,13 +42,13 @@ export const MediaBlock: React.FC<Props> = (props) => {
         className,
       )}
     >
-      {(media || staticImage) && (
-        <Media
-          imgClassName={cn('border border-border rounded-[0.8rem]', imgClassName)}
-          resource={media}
-          src={staticImage}
-        />
-      )}
+      {/*{(media || staticImage) && (*/}
+      {/*  <Media*/}
+      {/*    imgClassName={cn('border border-border rounded-[0.8rem]', imgClassName)}*/}
+      {/*    resource={media}*/}
+      {/*    src={staticImage}*/}
+      {/*  />*/}
+      {/*)}*/}
       {caption && (
         <div
           className={cn(
