@@ -12,6 +12,8 @@ export default {
       fontFamily: {
         alientz: ['var(--font-alientz)'],
         alientzSerif: ['var(--font-alientz-serif)'],
+        montclear: ['var(--font-montclear)'],
+        flyingMontclear: ['var(--font-flying-montclear)'],
       },
     },
   },

@@ -3,14 +3,24 @@ import React from 'react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { cn } from '@/utilities/ui'
-import { AlientzGrotesque, AlientzSerif } from '../../../public/fonts/Alientz'
+import {
+  AlientzGrotesque,
+  AlientzSerif,
+  Montclear,
+  FlyingMontclear,
+} from '../../../public/fonts/fonts'
 
 import './globals.css'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      className={cn(AlientzSerif.variable, AlientzGrotesque.variable)}
+      className={cn(
+        AlientzSerif.variable,
+        AlientzGrotesque.variable,
+        Montclear.variable,
+        FlyingMontclear.variable,
+      )}
       lang="en"
       suppressHydrationWarning
     >
