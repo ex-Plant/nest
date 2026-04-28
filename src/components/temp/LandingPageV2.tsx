@@ -4,7 +4,7 @@ import LandingGradientWrapper from '@/components/temp/LandingGradientWrapper'
 import BirdLogo from '@/components/temp/BirdLogo'
 import kupBiletImg from '../../../public/kup bilet.png'
 
-const goingLink = 'https://goingapp.pl/wydarzenie/gniazdo-festiwalu/krzykawka-lipiec-2025'
+const goingLink = 'https://goingapp.pl/wydarzenie/gniazdo-festiwal-2026'
 
 const date = `31.07-02.08`
 const place = 'Krzykawka Małopolskie'
