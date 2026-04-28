@@ -20,7 +20,7 @@ export default function LandingPage() {
         className={`object-cover -z-10 pointer-events-none`}
       />
       <section
-        className={`flex flex-col items-center w-full grow justify-center max-w-[1440px] mx-auto font-alientzSerif `}
+        className={`flex flex-col items-center w-full grow justify-center max-w-[1440px] mx-auto font-alientzSerif text-white`}
       >
         <TopDesktop />
         <div className={`pb-7 pt-[min(7.5rem,15vh)] md:hidden`}>
@@ -30,7 +30,7 @@ export default function LandingPage() {
         <div className={`flex px-[max(2rem,12vw)] pb-14 md:pb-24 w-full `}>
           <NestLogo />
         </div>
-        <p className={`text-[1.25rem] pb-36 md:pb-24 md:hidden `}>{place}</p>
+        <p className={`text-[1.25rem] pb-36 md:pb-24  `}>{place}</p>
         <BtnTickets />
       </section>
     </LandingGradientWrapper>
