@@ -1,15 +1,24 @@
 import React from 'react'
+import Image from 'next/image'
 import LandingGradientWrapper from '@/components/temp/LandingGradientWrapper'
 import BirdLogo from '@/components/temp/BirdLogo'
 import NestLogo from '@/components/temp/NestLogo'
 import BtnTickets from '@/components/temp/BtnTickets'
 
-const date = `12.07.2025 `
+const date = `31.07-02.08`
 const place = 'Krzykawka Małopolskie'
 
 export default function LandingPage() {
   return (
     <LandingGradientWrapper>
+      <Image
+        src="/tlo.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className={`object-cover -z-10 pointer-events-none`}
+      />
       <section
         className={`flex flex-col items-center w-full grow justify-center max-w-[1440px] mx-auto font-alientzSerif `}
       >
